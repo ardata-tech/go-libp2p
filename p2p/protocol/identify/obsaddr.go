@@ -2,6 +2,7 @@ package identify
 
 import (
 	"context"
+	"fmt"
 	"sort"
 	"sync"
 	"time"
@@ -330,6 +331,7 @@ func (oas *ObservedAddrManager) removeConn(conn network.Conn) {
 }
 
 func (oas *ObservedAddrManager) maybeRecordObservation(conn network.Conn, observed ma.Multiaddr) {
+	fmt.Println("\n recording address ", observed)
 
 	// First, determine if this observation is even worth keeping...
 
